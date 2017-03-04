@@ -3,12 +3,12 @@ import mongoose from 'mongoose';
 import httpStatus from 'http-status';
 import APIError from '../helpers/APIError';
 
-const ActivitySchema = new mongoose.Schema({}, {
+
+const TaskSchema = new mongoose.Schema({}, {
   timestamps: true
 });
 
-
-ActivitySchema.add({
+TaskSchema.add({
   name: {
     type: String,
     required: true
@@ -17,13 +17,25 @@ ActivitySchema.add({
     type: String,
     enum: ['Sport', 'Creative', 'Musical', 'Entertainment']
   },
-  duration: {
-    type: Number,
-    required: true
-  },
   description: {
     type: String,
     required: true
+  },
+  startTime: {
+    type: Number,
+    required: true
+  },
+  frequencyPerDay:{
+    type: Number,
+    required: true
+  },
+  unitsOfDosage: {
+    type: Number,
+    required: true
+  },
+  patient: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Patient'
   }
 });
 
@@ -37,17 +49,17 @@ ActivitySchema.add({
 /**
  * Methods
  */
-ActivitySchema.method({
+TaskSchema.method({
 });
 
 /**
  * Statics
  */
- ActivitySchema.statics = {
+ TaskSchema.statics = {
 
  };
 
  /**
-  * @typedef Activity
+  * @typedef Task
   */
- export default mongoose.model('Activity', ActivitySchema);
+ export default mongoose.model('Task', TaskSchema);

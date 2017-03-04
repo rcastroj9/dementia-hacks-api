@@ -37,7 +37,7 @@
     "mocha",
     "istanbul",
     "REST",
-    "API",
+    "API"
   ],
   "dependencies": {
     "bluebird": "3.4.6",
@@ -78,6 +78,7 @@
     "eslint-watch": "2.1.14",
     "gulp": "3.9.1",
     "gulp-babel": "6.1.2",
+    "gulp-eslint": "3.0.1",
     "gulp-load-plugins": "^1.2.0",
     "gulp-newer": "^1.1.0",
     "gulp-nodemon": "^2.0.6",
@@ -85,6 +86,7 @@
     "gulp-util": "^3.0.7",
     "husky": "^0.13.1",
     "istanbul": "1.1.0-alpha.1",
+    "joi": "10.0.6",
     "mocha": "3.2.0",
     "run-sequence": "^1.1.5",
     "supertest": "2.0.1",

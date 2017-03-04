@@ -1,8 +1,7 @@
 import mongoose from 'mongoose';
 import util from 'util';
-
 // config should be imported before importing any other file
-import config from './config/config';
+import config from './config/env';
 import app from './config/express';
 
 const debug = require('debug')('express-mongoose-es6-rest-api:index');
@@ -14,8 +13,7 @@ Promise = require('bluebird'); // eslint-disable-line no-global-assign
 mongoose.Promise = Promise;
 
 // connect to mongo db
-const mongoUri = `${config.mongo.host}:${config.mongo.port}`;
-mongoose.connect(mongoUri, { server: { socketOptions: { keepAlive: 1 } } });
+mongoose.connect(config.db, { server: { socketOptions: { keepAlive: 1 } } });
 mongoose.connection.on('error', () => {
   throw new Error(`unable to connect to database: ${config.db}`);
 });

@@ -10,8 +10,7 @@ function index(req, res, next) {
     .catch(e => next(e));
 }
 
-/**
- * Add a Specific Goal or array of goals to a user
+ /* Add a Specific Goal or array of goals to a user
  * @param {req.params.goalId} GoalId Goal to add to a user
  * @param {req.body.patientId} UserId User to add goal
  *
@@ -61,4 +60,5 @@ function stopGoal(req, res, next) {
 }
 
 
-export default { index, create, assignGoal, stopGoal };
+
+export default { index, assignGoal, stopGoal, create };

@@ -1,7 +1,7 @@
-import Promise from 'bluebird';
+// import Promise from 'bluebird';
 import mongoose from 'mongoose';
-import httpStatus from 'http-status';
-import APIError from '../helpers/APIError';
+// import httpStatus from 'http-status';
+// import APIError from '../helpers/APIError';
 
 const PatientSchema = new mongoose.Schema({
   patientName: {
@@ -16,15 +16,24 @@ const PatientSchema = new mongoose.Schema({
   age: {
     type: Number,
     required: true,
-    min:0,
-    max:120
+    min: 0,
+    max: 120
   },
   stage: {
     type: Number,
-    required:true,
-    min:0,
-    max:7
+    required: true,
+    min: 0,
+    max: 7
   },
+  goals: [{
+    goal: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Goal'
+    },
+    dateStarted: {
+      type: Date
+    }
+  }],
   familyMember: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: 'FamilyMember'
@@ -34,8 +43,6 @@ const PatientSchema = new mongoose.Schema({
     ref: 'Doctor'
   }
 });
-
-
 
 /**
  * @typedef Patient

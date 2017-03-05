@@ -7,7 +7,9 @@ const router = express.Router(); // eslint-disable-line new-cap
 
 router.route('/')
   /** GET /api/goal Get all the possible goals that the user can choose **/
-  .get(goalCtrl.index);
+  .get(goalCtrl.index)
+  /** POST /api/goal Create a new Goal **/
+  .post(goalCtrl.create);
 
 router.route('/user/:goalId')
   /** POST /api/goal/user/:goalId Indicate that a user wants a goal **/

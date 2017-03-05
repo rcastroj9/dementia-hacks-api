@@ -30,9 +30,4 @@ router.use('/familyMember', familyMemberRoutes);
 
 router.use('/doctor', doctorRoutes);
 
-
-
-
-
-
 export default router;

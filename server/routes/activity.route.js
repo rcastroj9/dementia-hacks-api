@@ -12,3 +12,6 @@ router.route('/')
 router.route('/:activityId/:patientId')
   /** PUT /api/:activityId/:userId Indicates a patient likes an activity **/
   .put(activityCtrl.addActivity);
+
+
+export default router;

@@ -16,3 +16,5 @@ router.route('/user/:goalId')
   .post(goalCtrl.assignGoal)
   /** DELETE /api/goal/user/:goalId Indicate that a user stops wanting a goal **/
   .delete(goalCtrl.stopGoal);
+
+export default router;

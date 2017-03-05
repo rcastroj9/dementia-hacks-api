@@ -1,7 +1,7 @@
-import Promise from 'bluebird';
+// import Promise from 'bluebird';
 import mongoose from 'mongoose';
-import httpStatus from 'http-status';
-import APIError from '../helpers/APIError';
+// import httpStatus from 'http-status';
+// import APIError from '../helpers/APIError';
 
 
 const ContactSchema = new mongoose.Schema({}, {
@@ -51,11 +51,11 @@ ContactSchema.method({
 /**
  * Statics
  */
- ContactSchema.statics = {
+ContactSchema.statics = {
 
- };
+};
 
  /**
   * @typedef Contact
   */
- export default mongoose.model('Contact', ContactSchema);
+export default mongoose.model('Contact', ContactSchema);

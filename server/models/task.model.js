@@ -1,7 +1,7 @@
-import Promise from 'bluebird';
+// import Promise from 'bluebird';
 import mongoose from 'mongoose';
-import httpStatus from 'http-status';
-import APIError from '../helpers/APIError';
+// import httpStatus from 'http-status';
+// import APIError from '../helpers/APIError';
 
 
 const TaskSchema = new mongoose.Schema({}, {
@@ -25,7 +25,7 @@ TaskSchema.add({
     type: Number,
     required: true
   },
-  frequencyPerDay:{
+  frequencyPerDay: {
     type: Number,
     required: true
   },
@@ -55,11 +55,11 @@ TaskSchema.method({
 /**
  * Statics
  */
- TaskSchema.statics = {
+TaskSchema.statics = {
 
- };
+};
 
  /**
   * @typedef Task
   */
- export default mongoose.model('Task', TaskSchema);
+export default mongoose.model('Task', TaskSchema);

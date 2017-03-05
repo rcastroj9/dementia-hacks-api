@@ -1,7 +1,7 @@
-import Promise from 'bluebird';
+// import Promise from 'bluebird';
 import mongoose from 'mongoose';
-import httpStatus from 'http-status';
-import APIError from '../helpers/APIError';
+// import httpStatus from 'http-status';
+// import APIError from '../helpers/APIError';
 
 
 const GoalSchema = new mongoose.Schema({}, {
@@ -45,11 +45,11 @@ GoalSchema.method({
 /**
  * Statics
  */
- GoalSchema.statics = {
+GoalSchema.statics = {
 
- };
+};
 
  /**
   * @typedef Goal
   */
- export default mongoose.model('Goal', GoalSchema);
+export default mongoose.model('Goal', GoalSchema);

@@ -1,7 +1,7 @@
-import Promise from 'bluebird';
+// import Promise from 'bluebird';
 import mongoose from 'mongoose';
-import httpStatus from 'http-status';
-import APIError from '../helpers/APIError';
+// import httpStatus from 'http-status';
+// import APIError from '../helpers/APIError';
 
 const ActivitySchema = new mongoose.Schema({}, {
   timestamps: true
@@ -43,11 +43,11 @@ ActivitySchema.method({
 /**
  * Statics
  */
- ActivitySchema.statics = {
+ActivitySchema.statics = {
 
- };
+};
 
  /**
   * @typedef Activity
   */
- export default mongoose.model('Activity', ActivitySchema);
+export default mongoose.model('Activity', ActivitySchema);

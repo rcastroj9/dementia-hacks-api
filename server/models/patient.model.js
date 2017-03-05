@@ -41,6 +41,10 @@ const PatientSchema = new mongoose.Schema({
   doctor: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Doctor'
+  },
+  likedActivites: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Activity'
   }
 });
 

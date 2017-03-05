@@ -20,7 +20,7 @@ router.use('/auth', authRoutes);
 // mount activity routes at /activity
 // router.use('/activity', activityRoutes);
 // mount goal routes at /goals
-// router.use('/goals', goalRoutes);
+router.use('/goals', goalRoutes);
 
 
 export default router;

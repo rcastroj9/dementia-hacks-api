@@ -1,8 +1,11 @@
 import express from 'express';
 import userRoutes from './user.route';
 import authRoutes from './auth.route';
-import activityRoutes from './activity.route';
-import goalRoutes from './goal.route';
+// import activityRoutes from './activity.route';
+// import goalRoutes from './goal.route';
+import familyMemberRoutes from './familyMember.route';
+import patientRoutes from './patient.route';
+import doctorRoutes from './doctor.route';
 
 const router = express.Router(); // eslint-disable-line new-cap
 
@@ -18,9 +21,18 @@ router.use('/users', userRoutes);
 router.use('/auth', authRoutes);
 
 //mount activity routes at /activity
-router.use('/activity', activityRoutes);
+// router.use('/activity', activityRoutes);
 // mount goal routes at /goals
-router.use('/goals', goalRoutes);
+// router.use('/goals', goalRoutes);
+
+// mount familyMember routes at /familyMember
+router.use('/familyMember', familyMemberRoutes);
+
+router.use('/doctor', doctorRoutes);
+
+
+
+
 
 
 export default router;

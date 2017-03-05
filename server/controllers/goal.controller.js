@@ -17,10 +17,11 @@ function load(req, res, next, id) {
  *  Add Goal to a User
  */
 function addGoal(req, res, next) {
-  Patient.findByIdAndUpdate(req.body.patientId, { $addToSet: { goals: req.body.goalName },
-  { new: true } })
+  Patient.findByIdAndUpdate(req.body.patientId, { $addToSet: { goals: req.body.goalName }},
+  { new: true } )
     .then((patient) => {
+      return res.json(patient);
 
-    })
+    });
 }
-export default { load };
+export default { load, addGoal };

@@ -33,7 +33,7 @@ const PatientSchema = new mongoose.Schema({
     dateStarted: {
       type: Date
     }
-  }]
+  }],
   familyMember: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: 'FamilyMember'

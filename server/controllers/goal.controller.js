@@ -4,9 +4,9 @@ import Patient from '../models/patient.model';
 /**
  * Return all the Possible Goals
  */
-function index (req, res, next) {
+function index(req, res, next) {
   Goal.find({}).exec()
-    .then((goals) => res.json(goals))
+    .then(goals => res.json(goals))
     .catch(e => next(e));
 }
 
@@ -21,13 +21,13 @@ function assignGoal(req, res, next) {
     goal: req.params.goalId,
     dateStarted: Date.now
   };
-  Patient.findByIdAndUpdate(req.body.patientId, { $addToSet : { goals: response } },
+  Patient.findByIdAndUpdate(req.body.patientId, { $addToSet: { goals: response } },
   { new: true }).exec()
   .then((patient) => {
     if (patient) {
       return res.json(patient);
     }
-    res.status(404).end();
+    return res.status(404).end();
   })
   .catch(e => next(e));
 }
@@ -49,22 +49,16 @@ function create(req, res, next) {
  * @param {req.body.patientId} UserId User to add goal
  */
 function stopGoal(req, res, next) {
-  Patient.findByIdAndUpdate(req.body.patientId, { $pull : { goals: req.params.goalId } },
+  Patient.findByIdAndUpdate(req.body.patientId, { $pull: { goals: req.params.goalId } },
   { new: true }).exec()
   .then((patient) => {
     if (patient) {
       return res.json(patient);
     }
-    res.status(404).end();
+    return res.status(404).end();
   })
   .catch(e => next(e));
 }
 
-/**
- * Creates a new Goal
- */
-function create(req, res, next) {
 
-}
-
-export default { index, addGoalToUser }
+export default { index, create, assignGoal, stopGoal };

@@ -1,6 +1,6 @@
 import express from 'express';
-import validate from 'express-validation';
-import paramValidation from '../../config/param-validation';
+// import validate from 'express-validation';
+// import paramValidation from '../../config/param-validation';
 import goalCtrl from '../controllers/goal.controller';
 
 const router = express.Router(); // eslint-disable-line new-cap

@@ -5,7 +5,7 @@ import app from '../../index';
 
 chai.config.includeStack = true;
 
-describe('## Misc', () => {
+describe.skip('## Misc', () => {
   describe('# GET /api/health-check', () => {
     it('should return OK', (done) => {
       request(app)

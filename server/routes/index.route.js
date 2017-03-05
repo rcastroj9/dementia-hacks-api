@@ -1,8 +1,8 @@
 import express from 'express';
 import userRoutes from './user.route';
 import authRoutes from './auth.route';
-import activityRoutes from './activity.route';
-import goalRoutes from './goal.route';
+// import activityRoutes from './activity.route';
+// import goalRoutes from './goal.route';
 
 const router = express.Router(); // eslint-disable-line new-cap
 
@@ -17,10 +17,10 @@ router.use('/users', userRoutes);
 // mount auth routes at /auth
 router.use('/auth', authRoutes);
 
-//mount activity routes at /activity
-router.use('/activity', activityRoutes);
+// mount activity routes at /activity
+// router.use('/activity', activityRoutes);
 // mount goal routes at /goals
-router.use('/goals', goalRoutes);
+// router.use('/goals', goalRoutes);
 
 
 export default router;

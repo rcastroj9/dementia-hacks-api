@@ -1,7 +1,7 @@
-import Promise from 'bluebird';
+// import Promise from 'bluebird';
 import mongoose from 'mongoose';
-import httpStatus from 'http-status';
-import APIError from '../helpers/APIError';
+// import httpStatus from 'http-status';
+// import APIError from '../helpers/APIError';
 
 const FamilyMemberSchema = new mongoose.Schema({
   doctorName: {

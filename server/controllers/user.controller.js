@@ -47,6 +47,7 @@ function create(req, res, next) {
  * @property {string} req.body.mobileNumber - The mobileNumber of user.
  * @property {string} req.body.email - The mobileNumber of user.
  * @property {string} req.body.password - The mobileNumber of user.
+ * @property {string} req.body.patient - The patient associated of user.
  * @returns {User}
  */
 function update(req, res, next) {
@@ -55,6 +56,7 @@ function update(req, res, next) {
   user.mobileNumber = req.body.mobileNumber;
   user.email = req.body.email;
   user.password = req.body.password;
+  user.patient = req.body.patient;
 
   user.save()
     .then(savedUser => res.json(savedUser))
